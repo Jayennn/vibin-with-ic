@@ -10,7 +10,7 @@ const startTime = () => {
         jam + ":" + menit + ":" + detik;
     var time = setTimeout(startTime, 1000);
 
-    console.log(jam);
+    // console.log(jam);
 }
 
 const checkTime = (i) => {
