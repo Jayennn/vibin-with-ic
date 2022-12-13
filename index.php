@@ -39,7 +39,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- <form action="http://127.0.0.1:8000/api/bazar" method="post"> -->
+                    <!-- <form action="http://api-bazar.stevanandreas.com/api/bazar" method="post"> -->
                     <div class="mb-3">
                         <label for="nama">Nama Pembeli</label>
                         <input type="text" name="nama" class="form-control" id="nama" required>
@@ -75,7 +75,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- <form action="http://127.0.0.1:8000/api/bazar" method="post"> -->
+                    <!-- <form action="http://api-bazar.stevanandreas.com/api/bazar" method="post"> -->
                     <div class="mb-3">
                         <label for="nama">Nama Pembeli</label>
                         <input type="text" name="nama" class="form-control" id="nama" required>
@@ -159,7 +159,9 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-4">
                             <h5 class="card-title">Data Penjualan Bazar</h5>
-                            <h5>Total Penjualan : <strong><div id="total"></div></strong></h5>
+                            <h5>Total Penjualan : <strong>
+                                    <div id="total"></div>
+                                </strong></h5>
                         </div>
                         <table id="example" class="table" display style="width:100%">
                             <thead>
@@ -207,7 +209,7 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "http://127.0.0.1:8000/api/bazar",
+                url: "http://api-bazar.stevanandreas.com/api/bazar",
             },
             columns: [{
                     data: 'DT_RowIndex',
@@ -270,9 +272,11 @@
 
         $.ajax({
             type: "GET",
-            url: "http://127.0.0.1:8000/api/total",
+            url: "http://api-bazar.stevanandreas.com/api/total",
             success: function(data) {
-                var total = new Intl.NumberFormat('id-ID', { maximumSignificantDigits: 3 }).format(data.total)
+                var total = new Intl.NumberFormat('id-ID', {
+                    maximumSignificantDigits: 3
+                }).format(data.total)
                 $("#total").html(`Rp ${total}`)
             }
         })
@@ -284,7 +288,7 @@
             var harga = $("#add-item input[name=harga]").val()
 
             $.ajax({
-                url: "http://127.0.0.1:8000/api/bazar",
+                url: "http://api-bazar.stevanandreas.com/api/bazar",
                 method: "POST",
                 data: {
                     nama: nama,
@@ -304,7 +308,7 @@
             $("#edit-item button").attr("data-id", id)
             console.log(id);
             $.ajax({
-                url: "http://127.0.0.1:8000/api/bazar/" + id,
+                url: "http://api-bazar.stevanandreas.com/api/bazar/" + id,
                 type: "GET",
                 success: function(data) {
                     console.log(data);
@@ -342,7 +346,7 @@
             var harga = $("#edit-item input[name=harga]").val()
 
             $.ajax({
-                url: "http://127.0.0.1:8000/api/bazar/" + id,
+                url: "http://api-bazar.stevanandreas.com/api/bazar/" + id,
                 type: "POST",
                 data: {
                     _method: "PUT",
@@ -362,7 +366,7 @@
             var id = $(this).attr("data-id")
             if (confirm("Yakin ingin menghapus item?") == true) {
                 $.ajax({
-                    url: "http://127.0.0.1:8000/api/bazar/" + id,
+                    url: "http://api-bazar.stevanandreas.com/api/bazar/" + id,
                     type: "POST",
                     data: {
                         _method: "DELETE"
@@ -378,7 +382,7 @@
             var id = $(this).attr("data-id")
             if (confirm("Yakin ingin menandai item?") == true) {
                 $.ajax({
-                    url: "http://127.0.0.1:8000/api/update-status/" + id,
+                    url: "http://api-bazar.stevanandreas.com/api/update-status/" + id,
                     type: "POST",
                     data: {
                         _method: "PUT"
