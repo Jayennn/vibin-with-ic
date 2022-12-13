@@ -286,21 +286,24 @@
             var nama_menu = $("#add-item select[name=nama_menu]").val()
             var jumlah = $("#add-item input[name=jumlah]").val()
             var harga = $("#add-item input[name=harga]").val()
-
-            $.ajax({
-                url: "http://api-bazar.stevanandreas.com/api/bazar",
-                method: "POST",
-                data: {
-                    nama: nama,
-                    nama_menu: nama_menu,
-                    jumlah: jumlah,
-                    harga: harga,
-                },
-                success: function(data) {
-                    $("#add-item").modal('hide')
-                    table.draw()
-                }
-            })
+            if (nama && nama_menu && jumlah && harga) {
+                $.ajax({
+                    url: "http://api-bazar.stevanandreas.com/api/bazar",
+                    method: "POST",
+                    data: {
+                        nama: nama,
+                        nama_menu: nama_menu,
+                        jumlah: jumlah,
+                        harga: harga,
+                    },
+                    success: function(data) {
+                        $("#add-item").modal('hide')
+                        table.draw()
+                    }
+                })
+            } else {
+                alert("WAJIB DI ISI!")
+            }
         })
 
         $("#example tbody").on('click', 'td button.edit-item', function() {
@@ -345,21 +348,25 @@
             var jumlah = $("#edit-item input[name=jumlah]").val()
             var harga = $("#edit-item input[name=harga]").val()
 
-            $.ajax({
-                url: "http://api-bazar.stevanandreas.com/api/bazar/" + id,
-                type: "POST",
-                data: {
-                    _method: "PUT",
-                    nama: nama,
-                    nama_menu: nama_menu,
-                    jumlah: jumlah,
-                    harga: harga,
-                },
-                success: function(data) {
-                    $("#edit-item").modal('hide')
-                    table.draw()
-                }
-            })
+            if (nama && nama_menu && jumlah && harga) {
+                $.ajax({
+                    url: "http://api-bazar.stevanandreas.com/api/bazar/" + id,
+                    type: "POST",
+                    data: {
+                        _method: "PUT",
+                        nama: nama,
+                        nama_menu: nama_menu,
+                        jumlah: jumlah,
+                        harga: harga,
+                    },
+                    success: function(data) {
+                        $("#edit-item").modal('hide')
+                        table.draw()
+                    }
+                })
+            } else {
+                alert("WAJIB DI ISI!")
+            }
         })
 
         $("#example tbody").on('click', 'td button.delete-item', function() {
