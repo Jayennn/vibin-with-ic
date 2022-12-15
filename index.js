@@ -21,3 +21,32 @@ const checkTime = (i) => {
 }
 
 
+const menuWrapper = document.getElementById("menu")
+const active = menuWrapper.getElementsByClassName("menu-link");
+
+Array.from(active).forEach(item => {
+    item.addEventListener("click", () => { 
+        var selected = document.getElementsByClassName("active");
+        selected[0].className = selected[0].className.replace(" active", "");
+        item.className += " active"
+    })
+})
+
+const click = document.querySelector(".toggle");
+let sidebarWrapp = document.querySelector(".sidebar-wrapper")
+let sidebar = document.querySelector(".sidebar")
+var clicked = 0;
+
+click.addEventListener("click", () => {
+    clicked++
+    click.classList.add("toggle-show")
+    sidebarWrapp.classList.add("close-wrapper")
+    sidebar.classList.add("close-sidebar")
+    if (clicked % 2 == 0) {  
+        click.classList.remove("toggle-show")
+        sidebarWrapp.classList.remove("close-wrapper")
+        sidebar.classList.remove("close-sidebar")
+    }
+})
+
+

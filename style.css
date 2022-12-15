@@ -40,8 +40,14 @@ body {
 }
 
 .sidebar-wrapper {
-    width: 23%;
+    width: 24%;
     height: 100vh;
+    transition: var(--tran-04);
+}
+
+.close-wrapper {
+    transition: var(--tran-04);
+    width: 0px;
 }
 
 .content-wrapper {
@@ -50,7 +56,6 @@ body {
 }
 
 .content-wrapper .container {
-    /* grid-template-columns: 1fr ; */
     gap: 5px;
     display: grid;
 }
@@ -75,8 +80,12 @@ body {
     width: 250px;
     padding: 10px 14px;
     background: var(--sidebar-color);
-
+    transition: var(--tran-04);
 } 
+
+.close-sidebar {
+    left: -250px;
+}
 
 .sidebar li {
     height: 50px;
@@ -119,6 +128,15 @@ body {
     color: var(--sidebar-color)!important;
 }
 
+.active {
+    background: var(--primary-color)!important;
+    border-radius: 6px;
+}
+
+.active .text,
+.active .icon {
+    color: var(--sidebar-color)!important;
+}
 
 .sidebar .menu-bar {
     height: calc(100% - 50px);
@@ -172,6 +190,14 @@ header .image-text .header-text {
     border-radius: 50%;
     color: var(--sidebar-color);
     font-size: 25px;
+    transition: var(--tran-03);
+}
+
+.toggle-show {
+    transition: var(--tran-03);
+    right: -42px!important;
+    border-radius: 10px!important;
+    height: 75px!important;
 }
 
 .sidebar li a {
@@ -189,3 +215,4 @@ header .image-text .header-text {
 .content-wrapper .container .statistic-sell .add-button {
     width: 10rem;
 }
+

@@ -117,22 +117,14 @@
                     <i class='bx bx-chevron-right target toggle'></i>
 
                     <div class="menu-bar">
-                        <div class="menu">
-                            <ul class="menu-link">
-                                <li class="nav-links">
+                        <div class="menu" id="menu">
+                            <ul class="clock-list">
+                                <li class="clock-display">
                                     <i class="bi bi-clock icon"></i>
                                     <h5 id="clock"></h5>
                                 </li>
                             </ul>
-                            <ul class="menu-link">
-                                <li class="nav-links">
-                                    <a href="#">
-                                        <i class='bx bx-home icon'></i>
-                                        <span class="text nav-text">Dashboard</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="menu-link">
+                            <ul class="menu-link active">
                                 <li class="nav-links">
                                     <a href="#">
                                         <i class='bx bx-home icon'></i>
@@ -144,7 +136,23 @@
                                 <li class="nav-links">
                                     <a href="#">
                                         <i class='bx bx-pie-chart-alt-2 icon'></i>
-                                        <span class="text nav-text">Dashboard</span>
+                                        <span class="text nav-text">Statistik</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="menu-link">
+                                <li class="nav-links">
+                                    <a href="#">
+                                        <i class='bx bx-pie-chart-alt-2 icon'></i>
+                                        <span class="text nav-text">Statistik</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="menu-link">
+                                <li class="nav-links">
+                                    <a href="#">
+                                        <i class='bx bx-pie-chart-alt-2 icon'></i>
+                                        <span class="text nav-text">Statistik</span>
                                     </a>
                                 </li>
                             </ul>
@@ -159,9 +167,11 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-4">
                             <h5 class="card-title">Data Penjualan Bazar</h5>
-                            <h5>Total Penjualan : <strong>
+                            <h5>Total Penjualan :
+                                 <strong>
                                     <div id="total"></div>
-                                </strong></h5>
+                                </strong>
+                            </h5>
                         </div>
                         <table id="example" class="table" display style="width:100%">
                             <thead>
