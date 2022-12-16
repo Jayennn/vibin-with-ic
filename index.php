@@ -51,6 +51,7 @@
                             <option value="Banana Cheese">Banana Cheese</option>
                             <option value="Piesecok">Piesecok</option>
                             <option value="Pyudding">Pyudding</option>
+                            <option value="Bakso">Bakso</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -329,6 +330,7 @@
                     var selectedB
                     var selectedPi
                     var selectedPy
+                    var selectedBa
                     if (data.nama_menu == "Banana Cheese") {
                         selectedB = 'selected'
                     }
@@ -338,10 +340,14 @@
                     if (data.nama_menu == "Pyudding") {
                         selectedPy = 'selected'
                     }
+                    if (data.nama_menu == "Bakso") {
+                        selectedBa = 'selected'
+                    }
                     var nama_menu = $("#edit-item select[name=nama_menu]").append(
                         `<option value="Banana Cheese" ${selectedB}>Banana Cheese</option>
                             <option value="Piesecok" ${selectedPi}>Piesecok</option>
-                            <option value="Pyudding" ${selectedPy}>Pyudding</option>`
+                            <option value="Pyudding" ${selectedPy}>Pyudding</option>
+                            <option value="Bakso" ${selectedBa}>Bakso</option>`
                     )
                     var jumlah = $("#edit-item input[name=jumlah]").val(data.jumlah)
                     var harga = $("#edit-item input[name=harga]").val(data.harga)
