@@ -35,6 +35,7 @@ Array.from(active).forEach(item => {
 const click = document.querySelector(".toggle");
 let sidebarWrapp = document.querySelector(".sidebar-wrapper")
 let sidebar = document.querySelector(".sidebar")
+let dnone = document.querySelector(".content-wrapper")
 var clicked = 0;
 
 click.addEventListener("click", () => {
@@ -42,7 +43,9 @@ click.addEventListener("click", () => {
     click.classList.add("toggle-show")
     sidebarWrapp.classList.add("close-wrapper")
     sidebar.classList.add("close-sidebar")
+    dnone.classList.add("d-none")
     if (clicked % 2 == 0) {  
+        dnone.classList.remove("d-none")
         click.classList.remove("toggle-show")
         sidebarWrapp.classList.remove("close-wrapper")
         sidebar.classList.remove("close-sidebar")
