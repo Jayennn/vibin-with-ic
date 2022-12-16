@@ -266,7 +266,7 @@
                 render: function(data, type, row, meta) {
                     // console.log(row);
                     const html =
-                        `<button class="btn btn-primary btn-sm rounded-0 update-item" type="button" data-toggle="tooltip" data-placement="top" title="Add" data-id="${row.id}"><i class="bi bi-table"></i></button>` +
+                        `<button class="btn btn-primary btn-sm rounded-0 update-item" type="button" data-toggle="tooltip" data-placement="top" title="Add" data-id="${row.id}"><i class="bi bi-check-lg"></i></button>` +
                         `<button class="btn btn-success btn-sm rounded-0 edit-item" type="button" data-toggle="tooltip" data-placement="top" title="Edit" data-id="${row.id}"><i class="bi bi-pencil-square"></i></button>` +
                         `<button class="btn btn-danger btn-sm rounded-0 delete-item" type="button" data-placement="top" title="Delete" data-id="${row.id}"><i class="bi bi-trash"></i></button>`;
 
